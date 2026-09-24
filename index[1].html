@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rich Intel | CalGuava Drain Flow</title>
+<style>
+:root{--green:#2f6b3b;--light:#f4f8f1;--lime:#8ebf45;--dark:#17351f;--gold:#d6a63d;--white:#fff}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#26352a;background:#fff;line-height:1.6}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);box-shadow:0 2px 12px #0001;display:flex;align-items:center;justify-content:space-between;padding:12px 7%}
+.logo img{height:58px;width:auto;display:block}.logo{display:flex;align-items:center}
+nav a{color:#26352a;text-decoration:none;margin-left:22px;font-weight:700;font-size:14px}
+nav a:hover{color:var(--green)}
+.hero{min-height:86vh;background:linear-gradient(135deg,#edf6e8,#fff);display:grid;grid-template-columns:1.1fr .9fr;align-items:center;padding:70px 9%;gap:50px}
+.badge{display:inline-block;background:#dfeeda;color:var(--green);padding:7px 15px;border-radius:30px;font-weight:700}
+h1{font-size:clamp(42px,6vw,72px);line-height:1;margin:18px 0;color:var(--dark)}
+h1 span{color:var(--green)}.tagline{font-size:23px;color:#5c704f;font-weight:700}
+.hero p{max-width:650px;font-size:17px}.btn{display:inline-block;margin-top:18px;background:var(--green);color:white;text-decoration:none;padding:13px 23px;border-radius:9px;font-weight:700}
+.product-card{background:#fff;border-radius:28px;padding:35px;text-align:center;box-shadow:0 18px 50px #214c2a20}.hero-product-img{width:100%;max-width:620px;height:auto;border-radius:14px;display:block;margin:auto}
+.product-art{height:300px;border-radius:20px;background:linear-gradient(145deg,#386f3e,#9ac15a);display:flex;align-items:center;justify-content:center;color:white}
+.pack{border:4px solid white;border-radius:16px;padding:25px 20px;box-shadow:0 10px 25px #0003}.pack b{font-size:28px;display:block}.pack small{letter-spacing:2px}
+section{padding:75px 9%}section:nth-child(even){background:var(--light)}
+.section-title{text-align:center;margin-bottom:45px}.section-title h2{font-size:38px;color:var(--dark);margin:0}.section-title p{color:#68786a}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.card{background:#fff;padding:26px;border-radius:18px;box-shadow:0 8px 25px #0000000d}.card h3{color:var(--green);margin-top:0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.highlight{background:var(--green);color:white;padding:35px;border-radius:24px}.highlight h3{font-size:27px}
+.sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.size{padding:25px;text-align:center;border:2px solid #dce9d6;border-radius:15px}.size strong{font-size:25px;color:var(--green)}
+.price{font-size:25px;font-weight:800;color:var(--gold)}
+.steps{counter-reset:step}.step{display:flex;gap:18px;align-items:flex-start;margin:18px 0}.num{min-width:42px;height:42px;border-radius:50%;background:var(--green);color:white;display:grid;place-items:center;font-weight:bold}
+.warning{border-left:6px solid #e1a72d;background:#fff8df;padding:20px;border-radius:8px}
+.process{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px}.process div{background:#fff;padding:20px;text-align:center;border-radius:14px;font-weight:700;box-shadow:0 5px 15px #0000000b}
+.review{position:relative}.stars{color:#d6a63d;font-size:20px}.photo-box{height:170px;border-radius:14px;background:#e8eee5;display:grid;place-items:center;color:#738072;font-weight:700}
+.faq details{background:#fff;margin:12px 0;padding:18px 22px;border-radius:12px;box-shadow:0 4px 14px #0000000b}.faq summary{font-weight:700;cursor:pointer;color:var(--dark)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}.contact-box{background:var(--light);padding:30px;border-radius:20px}.contact a{color:var(--green);font-weight:bold}
+form input,form textarea{width:100%;padding:13px;margin:7px 0 12px;border:1px solid #ccd8ca;border-radius:8px;font:inherit}form textarea{height:120px}
+footer{background:var(--dark);color:#dce8dd;padding:40px 9%}footer a{color:#fff;text-decoration:none;margin-right:18px}
+@media(max-width:800px){nav{flex-direction:column;gap:10px}nav a{margin:0 7px}.hero,.about,.contact{grid-template-columns:1fr}.sizes{grid-template-columns:1fr}.hero{padding-top:45px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><img src="rich-intel-logo.png" alt="Rich Intel logo"></div>
+  <div>
+    <a href="#home">HOME</a><a href="#about">ABOUT US</a><a href="#products">PRODUCTS</a>
+    <a href="#how">HOW TO USE</a><a href="#reviews">REVIEWS</a><a href="#faq">FAQ</a><a href="#contact">CONTACT US</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div>
+    <span class="badge">Natural • Eco-Friendly • Easy to Use</span>
+    <h1>CalGuava<br><span>Drain Flow</span></h1>
+    <div class="tagline">Can Make Your Life Better</div>
+    <p>CalGuava Drain Flow is a natural and eco-friendly powdered drain cleaner made from calamansi and guava leaves. It helps reduce foul odors, bacteria, light grease, and minor buildup in kitchen, bathroom, and floor drains.</p>
+    <a class="btn" href="#products">Explore Product</a>
+  </div>
+  <div class="product-card">
+    <img class="hero-product-img" src="calguava-product.png" alt="CalGuava Drain Flow product">
+    <p><b>Available Sizes:</b> 250g • 500g • 1000g</p>
+  </div>
+</header>
+
+<section id="about">
+  <div class="section-title"><h2>About Us</h2><p>Rich Intel — a school business project</p></div>
+  <div class="about">
+    <div>
+      <h3>Company Description</h3>
+      <p>Rich Intel is a student business team focused on developing practical, affordable, and eco-friendly household products. Our featured product is CalGuava Drain Flow, created as a natural alternative for regular drain maintenance.</p>
+      <h3>How It Started</h3>
+      <p>The idea started from the common problem of unpleasant-smelling and lightly clogged household drains. We developed a powdered product using calamansi and guava leaves together with cleaning ingredients to create a convenient drain-maintenance solution.</p>
+      <h3>Business Location</h3>
+      <p>3Zone 3, Tanauan City, Batangas, Philippines</p>
+    </div>
+    <div class="highlight">
+      <h3>Mission</h3><p>To provide practical and eco-conscious household products that make everyday cleaning easier.</p>
+      <h3>Vision</h3><p>To become a trusted student-led brand known for useful, affordable, and environmentally responsible products.</p>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="section-title"><h2>Our Product</h2><p>CalGuava Drain Flow</p></div>
+  <div class="card">
+    <img src="calguava-product.png" alt="CalGuava Drain Flow product sizes" style="width:100%;max-width:850px;display:block;margin:0 auto 25px;border-radius:14px">
+    <h3>Product Description</h3>
+    <p>CalGuava Drain Flow is a powdered drain-cleaning and maintenance product made with calamansi and guava leaves. It is designed to help reduce foul odors, light grease, and minor buildup in kitchen, bathroom, and floor drains. Its easy-to-use powdered formula is convenient for regular drain maintenance.</p>
+    <h3>Available Sizes & Prices</h3>
+    <div class="sizes">
+      <div class="size"><strong>250 g</strong><p class="price">₱109</p></div>
+      <div class="size"><strong>500 g</strong><p class="price">₱159</p></div>
+      <div class="size"><strong>1000 g</strong><p class="price">₱249</p></div>
+    </div>
+  </div>
+  <div class="grid" style="margin-top:22px">
+    <div class="card"><h3>Ingredients</h3><p>• Calamansi powder<br>• Guava leaves powder<br>• Baking soda<br>• Citric acid<br>• Sodium carbonate<br>• Sodium percarbonate</p></div>
+    <div class="card"><h3>Benefits & Features</h3><p>• Helps reduce foul drain odors<br>• Helps remove light grease and minor buildup<br>• Suitable for regular maintenance<br>• Made with calamansi and guava leaves<br>• Easy to use<br>• Resealable, moisture-resistant container<br>• Clear usage instructions</p></div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="section-title"><h2>How to Use</h2><p>Simple step-by-step instructions</p></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div><b>Pour</b><br>Pour ½ cup of CalGuava Drain Flow powder into the drain.</div></div>
+    <div class="step"><div class="num">2</div><div><b>Add hot water</b><br>Pour hot water into the drain.</div></div>
+    <div class="step"><div class="num">3</div><div><b>Wait</b><br>Leave it for 5–10 minutes.</div></div>
+    <div class="step"><div class="num">4</div><div><b>Brush if needed</b><br>Brush the drain area if needed.</div></div>
+    <div class="step"><div class="num">5</div><div><b>Flush</b><br>Flush the drain with water.</div></div>
+  </div>
+  <div class="card" style="margin-top:25px"><b>Recommended Amount & Frequency:</b> Use ½ cup per application. For best maintenance, use regularly as needed.</div>
+  <div class="warning" style="margin-top:20px"><b>⚠️ CAUTION: EYE IRRITANT</b><br>
+  Avoid contact with eyes. Do not ingest. Never mix with other cleaning chemicals. Keep out of reach of children and pets. If the product comes into contact with the eyes, flush thoroughly with clean water. Seek medical attention if irritation persists.</div>
+</section>
+
+<section id="process">
+  <div class="section-title"><h2>How It Works / Production Process</h2><p>From raw materials to finished product</p></div>
+  <div class="process">
+    <div>1. Storage<br><small>Prepare raw materials</small></div>
+    <div>2. Washing & Drying<br><small>Clean and prepare leaves</small></div>
+    <div>3. Grinding<br><small>Make calamansi and guava powders</small></div>
+    <div>4. Mixing<br><small>Combine ingredients evenly</small></div>
+    <div>5. Quality Test<br><small>Check consistency and scent</small></div>
+    <div>6. Packaging<br><small>Seal and label containers</small></div>
+    <div>7. Finished Goods<br><small>Store ready products</small></div>
+    <div>8. Customer<br><small>Orders and delivery</small></div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="section-title"><h2>Customer Reviews & Feedback</h2><p>Customer testimonials, ratings, and product photos</p></div>
+  <div class="grid">
+    <div class="card review"><div class="stars">★★★★★</div><p>“The product has a fresh scent and is easy to use.”</p><b>— Customer Feedback</b></div>
+    <div class="card review"><div class="stars">★★★★★</div><p>“Convenient for regular drain maintenance.”</p><b>— Customer Feedback</b></div>
+    <div class="card"><div class="photo-box">CUSTOMER / PRODUCT PHOTO</div><p>Add actual customer photo here.</p></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="section-title"><h2>FAQ</h2><p>Frequently Asked Questions</p></div>
+  <div class="faq">
+    <details><summary>What is CalGuava Drain Flow?</summary><p>It is a powdered drain-cleaning and maintenance product made with calamansi and guava leaves.</p></details>
+    <details><summary>What sizes are available?</summary><p>250 grams, 500 grams, and 1000 grams.</p></details>
+    <details><summary>How much does it cost?</summary><p>250g – ₱109, 500g – ₱159, and 1000g – ₱249.</p></details>
+    <details><summary>How often should I use it?</summary><p>Use ½ cup per application regularly as needed for drain maintenance.</p></details>
+    <details><summary>Can I mix it with another cleaning chemical?</summary><p>No. Never mix CalGuava Drain Flow with other cleaning chemicals.</p></details>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title"><h2>Contact Us</h2><p>Send us a message for orders and inquiries</p></div>
+  <div class="contact">
+    <div class="contact-box">
+      <h3>Rich Intel</h3>
+      <p><b>Location:</b> 3Zone 3, Tanauan City, Batangas</p>
+      <p><b>Email:</b> <a href="mailto:richintel.partnership@gmail.com">richintel.partnership@gmail.com</a></p>
+      <p><b>Phone:</b> <a href="tel:09707440646">0970 744 0646</a></p>
+      <p><b>Social Media:</b><br>
+      <a href="#">Facebook: RichIntel</a><br>
+      <a href="#">Instagram: @calguava_drainflow</a></p>
+    </div>
+    <div class="contact-box">
+      <form onsubmit="event.preventDefault(); alert('Thank you! This school-project contact form is a demo.');">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Subject">
+        <textarea placeholder="Your message..." required></textarea>
+        <button class="btn" type="submit" style="border:0;cursor:pointer">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h2>RICH INTEL</h2>
+  <p>Can Make Your Life Better • CalGuava Drain Flow</p>
+  <p><a href="#home">Home</a><a href="#about">About Us</a><a href="#products">Products</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></p>
+  <small>© 2026 Rich Intel. School business plan project. Contact information shown for educational purposes.</small>
+</footer>
+</body>
+</html>
